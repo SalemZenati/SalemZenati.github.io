@@ -391,33 +391,62 @@ html, body {
 
 /* --------------------PORTFOLIO HTML------------- */
 .portfolio {
-    min-height: 100vh; /* Changed from height to min-height */
+    min-height: 100vh;
     background: #081b29;
-    display: flex; /* Added to align items vertically */
-    flex-direction: column; /* Ensures content is laid out in a vertical flow */
-    justify-content: flex-start; /* Aligns content to the top */
-    align-items: center; /* Centers items horizontally */
-    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5%; /* Reduced padding for smaller screens */
     position: relative;
-    
 }
 
-.portfolio h1, .portfolio p {
-    margin: 20px 0; /* Adds spacing around h1 and p for better readability */
-    width: 100%; /* Ensures full width within the padding constraints */
+.portfolio h1,
+.portfolio p {
+    margin: 20px 0;
+    width: 100%;
+    text-align: center; /* Center text for better mobile aesthetics */
 }
 
 .portfolio h1 {
-    font-size: 60px; /* Adjust font size if necessary for mobile */
+    font-size: 2.5rem; /* Use relative sizes for better scalability */
     font-weight: 700;
     line-height: 1.2;
-    padding-top: 200px;
+    padding-top: 100px; /* Reduced padding for smaller screens */
     color: rgb(250, 213, 4);
 }
 
 .portfolio p {
-    font-size: 20px; /* Adjust font size for mobile readability */
+    font-size: 1rem; /* Smaller text for mobile devices */
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.6; /* Increase line-height for readability */
     padding-bottom: 50px;
+}
+
+/* Media Queries for Responsive Adjustments */
+@media (max-width: 768px) {
+    .portfolio h1 {
+        font-size: 2rem; /* Even smaller font size for very small screens */
+        padding-top: 50px;
+    }
+
+    .portfolio p {
+        font-size: 0.9rem;
+        padding: 0 5%; /* Add horizontal padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio {
+        padding: 5% 3%; /* Further reduce padding for mobile phones */
+    }
+
+    .portfolio h1 {
+        font-size: 1.5rem; /* Smaller font size for mobile phones */
+        padding-top: 30px;
+    }
+
+    .portfolio p {
+        font-size: 0.8rem; /* Smaller text for mobile phones */
+    }
 }
