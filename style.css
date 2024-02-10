@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+body {
+    color: #ededed;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: transparent; /* Keep your existing styling */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(to bottom, #081b29 0%, transparent 70%);
+    z-index: -1;
+}
+
+.logo {
+    position: relative;
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: rgb(250, 213, 4);
+}
+
+.home {
+    height: 100vh;
+    background: url('tokyo.jpg') no-repeat center center/cover; /* Ensures the image covers the entire div */
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative; /* Important for pseudo-element positioning */
+}
+
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #081b29 0%, #081b29 30%, transparent 90%);
+    z-index: 0;
+}
+
+
+.home-content,
+.home-sci {
+    position: relative;
+    z-index: 1; /* Ensures content and social icons are above the overlay */
+}
+
+.home-content {
+    max-width: 600px;
+    
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: rgb(250, 213, 4);
+}
+
+.home-content p {
+    font-size: 16px;
+    margin: 20px 0 40px;
+}
+
+.home-content .btn-box {
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+}
+
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #00abf0;
+    border: 2px solid #00abf0;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #081b29;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Updated transition */
+    will-change: transform, background-color, color; /* Optimization for smoother animations */
+}
+
+.btn-box a:hover {
+    transform: scale(1.05); /* Gentle scaling effect */
+    color: #00abf0; /* Updated for a consistent transition */
+    background-color: #081b29; /* Ensures the background transitions smoothly */
+}
+
+.btn-box a:nth-child(2) {
+    background: transparent;
+    color: #00abf0;
+}
+
+.btn-box a:nth-child(2):hover {
+    color: #081b29;
+    background-color: #00abf0; /* Ensures background color changes smoothly on hover */
+}
+
+
+.btn-box a:hover::before {
+    width: 100%;
+}
+
+.home-sci {
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+}
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00abf0; /* Icon border color */
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0; /* Icon color */
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden; /* Ensures the pseudo-element's effect doesn't spill outside the icon */
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+
+.home-sci a:hover {
+    color: #081b29;
+}
+
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00abf0;
+    z-index: -1;
+    transition: .5s;
+}
+
+.home-sci a:hover::before {
+    width: 100%
+}
+
+.home-imgHover {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 700px;
+    height: 100%;
+    background: transparent;
+    transition: 3s;
+}
+
+.home-imgHover:hover {
+   background: #081b29;
+   opacity: .8;
+}
+
+/* KEYFRAMES ANIMATION */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated {
+    opacity: 0; /* Start elements as invisible to enable the fade-in effect */
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Adjust or add delay classes as needed */
+.animated.delay-2 { animation-delay: 0.6s; }
+.animated.delay-3 { animation-delay: 0.8s; }
+.animated.delay-4 { animation-delay: 1.1s; }
+.animated.delay-5 { animation-delay: 1.3s; }
+.animated.delay-6 { animation-delay: 2.0s; }
+.animated.delay-7 { animation-delay: 2.2s; }
+.animated.delay-8 { animation-delay: 2.4s; }
+.animated.delay-9 { animation-delay: 2.6s; }
+
+/* --------------------ABOUT ME HTML------------- */
+
+.about {
+    height: 100vh;
+    background: #081b29;
+    align-items: center;
+    padding: 0 10%;
+    position: relative; /* Important for pseudo-element positioning */
+}
+
+.about-content h1 {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-top: 250px;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.about-content p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+
+
