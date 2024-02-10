@@ -11,6 +11,16 @@ body {
     color: #ededed;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+}
+
 .header {
     position: fixed;
     top: 0;
@@ -76,7 +86,7 @@ body {
 }
 
 .home {
-    height: 100vh;
+    min-height: 100vh;
     background: url('tokyo.jpg') no-repeat center center/cover; /* Ensures the image covers the entire div */
     display: flex;
     align-items: center;
@@ -264,7 +274,7 @@ body {
 /* --------------------ABOUT ME HTML------------- */
 
 .about {
-    height: 100vh;
+    min-height: 100vh;
     background: #081b29;
     align-items: center;
     padding: 0 10%;
@@ -293,7 +303,7 @@ body {
 /* --------------------CONTACT HTML------------- */
 
 .contact {
-    height: 100vh;
+    min-height: 100vh;
     background: #081b29;
     align-items: center;
     padding: 0 10%;
@@ -321,28 +331,32 @@ body {
 
 /* --------------------PORTFOLIO HTML------------- */
 .portfolio {
-    height: 100vh;
+    min-height: 100vh; /* Changed from height to min-height */
     background: #081b29;
-    align-items: center;
+    display: flex; /* Added to align items vertically */
+    flex-direction: column; /* Ensures content is laid out in a vertical flow */
+    justify-content: flex-start; /* Aligns content to the top */
+    align-items: center; /* Centers items horizontally */
     padding: 0 10%;
-    position: relative; /* Important for pseudo-element positioning */
+    position: relative;
+    
+}
+
+.portfolio h1, .portfolio p {
+    margin: 20px 0; /* Adds spacing around h1 and p for better readability */
+    width: 100%; /* Ensures full width within the padding constraints */
 }
 
 .portfolio h1 {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    padding-top: 250px;
-    font-size: 60px;
+    font-size: 60px; /* Adjust font size if necessary for mobile */
     font-weight: 700;
     line-height: 1.2;
+    padding-top: 200px;
 }
 
 .portfolio p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
+    font-size: 20px; /* Adjust font size for mobile readability */
     font-weight: 400;
     line-height: 1.2;
+    padding-bottom: 50px;
 }
