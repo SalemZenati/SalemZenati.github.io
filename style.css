@@ -275,7 +275,7 @@ body {
     position: relative; /* Important for pseudo-element positioning */
 }
 
-.about-content h1 {
+.about h1 {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -285,7 +285,7 @@ body {
     line-height: 1.2;
 }
 
-.about-content p {
+.about p {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -294,5 +294,59 @@ body {
     line-height: 1.2;
 }
 
+/* --------------------CONTACT HTML------------- */
 
+.contact {
+    height: 100vh;
+    background: #081b29;
+    align-items: center;
+    padding: 0 10%;
+    position: relative; /* Important for pseudo-element positioning */
+}
 
+.contact h1 {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-top: 250px;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.contact p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+/* --------------------PORTFOLIO HTML------------- */
+.portfolio {
+    height: 100vh;
+    background: #081b29;
+    align-items: center;
+    padding: 0 10%;
+    position: relative; /* Important for pseudo-element positioning */
+}
+
+.portfolio h1 {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-top: 250px;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.portfolio p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.2;
+}

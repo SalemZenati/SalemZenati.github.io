@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Salem Zenati</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<header class="header">
+    <a href="index.html" class="logo animated delay-1">Salem.</a>
+    
+    <nav class="navbar">
+        <a href="index.html" class="navbar-item animated delay-2">Home</a>
+        <a href="about.html" class="navbar-item animated delay-3">About Me</a>
+        <a href="portfolio.html" class="navbar-item animated delay-4">Portfolio</a>
+        <a href="contact.html" class="active navbar-item animated delay-5">Contact</a>
+    </nav>
+</header>
+
+<section class="contact">
+    <div class="contact-form-container animated delay-2">
+        <h1>Contact Me</h1>
+        <p>If you have any questions or just want to get in touch, feel free to send a message using the form below.</p>
+        <form action="your-server-side-script" method="POST">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+</body>
+</html>
