@@ -133,6 +133,7 @@ html, body {
 .home-content p {
     font-size: 16px;
     margin: 20px 0 40px;
+    line-height: 24px;
 }
 
 .home-content .btn-box {
@@ -289,12 +290,14 @@ html, body {
     font-size: 60px;
     font-weight: 700;
     line-height: 1.2;
+    color: rgb(250, 213, 4);
 }
 
 .about p {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-right: 60px;
     font-size: 30px;
     font-weight: 400;
     line-height: 1.2;
@@ -314,10 +317,12 @@ html, body {
     display: flex;
     justify-content: left;
     align-items: center;
-    padding-top: 250px;
+    padding-top: 100px;
     font-size: 60px;
     font-weight: 700;
     line-height: 1.2;
+    color: rgb(250, 213, 4);
+    padding-right: 60px;
 }
 
 .contact p {
@@ -327,7 +332,62 @@ html, body {
     font-size: 30px;
     font-weight: 400;
     line-height: 1.2;
+    padding-right: 60px;
+    padding-bottom: 20px;
 }
+
+.contact-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #081b29;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-form p {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in the element's width and height */
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical; /* Allows the user to resize the textarea vertically */
+}
+
+.btn-send {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: #5c6bc0;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-send:hover {
+    background: #3f51b5;
+}
+
 
 /* --------------------PORTFOLIO HTML------------- */
 .portfolio {
@@ -352,6 +412,7 @@ html, body {
     font-weight: 700;
     line-height: 1.2;
     padding-top: 200px;
+    color: rgb(250, 213, 4);
 }
 
 .portfolio p {
