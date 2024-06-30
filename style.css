@@ -269,6 +269,15 @@ html, body {
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 /* Adjust or add delay classes as needed */
 .animated.delay-2 { animation-delay: 0.6s; }
 .animated.delay-3 { animation-delay: 0.8s; }
@@ -285,43 +294,118 @@ html, body {
 .animated.delay-p4 { animation-delay: 1.8s; }
 .animated.delay-p5 { animation-delay: 2.0s; }
 
-
-/* --------------------ABOUT ME HTML------------- */
+/* --------------------ABOUT ME CSS------------- */
 
 .about {
     min-height: 100vh;
-    background: #081b29;
-    align-items: center;
+    background: linear-gradient(to right, #081b29, #1a2a40);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
     padding: 0 10%;
-    position: relative; /* Important for pseudo-element positioning */
+    position: relative; 
+    color: #ededed;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.about-content {
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(250, 213, 4, 0.7); 
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+    transition: all 0.5s ease;
+    position: relative;
+    text-align: left;
+}
+
+.about-content.expanded {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 100%;
+    background: transparent;
+    box-shadow: none;
+    padding: 40px;
+    transform: translateX(-20px); /* Moves the content 20px to the left */
+}
+
+.about h1, .about h3 {
+    transition: all 0.5s ease;
+    transform: translateX(0); /* Ensure initial state */
+}
+
+.about-content.expanded h1, 
+.about-content.expanded h3 {
+    transform: translateX(-20px); /* Adjust the value as needed */
 }
 
 .about h1 {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    padding-top: 250px;
     font-size: 60px;
     font-weight: 700;
     line-height: 1.2;
+    margin-bottom: 20px;
     color: rgb(250, 213, 4);
 }
 
+.about h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
 .about p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-right: 60px;
-    font-size: 30px;
-    font-weight: 400;
-    line-height: 1.2;
+    font-size: 20px;
+    margin: 20px 0;
+    line-height: 1.6;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.about p:hover {
+    color: #00abf0;
+    transition: color 0.3s ease;
+}
+
+.expand-bar {
+    width: 80px;
+    height: 3px;
+    background: rgb(250, 213, 4);
+    margin: 20px auto;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    top: 20px; 
+}
+
+.expand-bar::before {
+    content: '';
+    position: absolute;
+    top: -10px; /* Adjust as needed */
+    left: -10px; /* Adjust as needed */
+    right: -10px; /* Adjust as needed */
+    bottom: -10px; /* Adjust as needed */
+    background: transparent; /* Invisible but expands clickable area */
+}
+
+.expand-bar:hover {
+    width: 100px;
+    height: 5px;
+    z-index: 1;
+    transition: all 0.3s ease;
 }
 
 /* --------------------CONTACT HTML------------- */
 
 .contact {
     min-height: 100vh;
-    background: #081b29;
+    background: linear-gradient(to right, #081b29, #1a2a40);
     align-items: center;
     padding: 0 10%;
     position: relative; /* Important for pseudo-element positioning */
@@ -353,7 +437,7 @@ html, body {
 .contact-form-container {
     max-width: 600px;
     margin: 0 auto;
-    background: #081b29;
+    background: transparent;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -406,7 +490,7 @@ html, body {
 /* --------------------PORTFOLIO HTML------------- */
 .portfolio {
     min-height: 100vh;
-    background: #081b29;
+    background: linear-gradient(to right, #081b29, #1a2a40);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
