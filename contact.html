@@ -25,7 +25,7 @@
     <div class="contact-form-container animated delay-2">
         <h1>Contact Me</h1>
         <p>If you have any questions or just want to get in touch, feel free to send a message using the form below.</p>
-        <form action="https://formspree.io/f/xkndjdpk" method="POST">
+        <form action="https://formspree.io/f/xkndjdpk" method="POST" class="contact-form">
             <div class="form-group">
                 <input type="text" id="name" name="name" placeholder="Full Name" required>
             </div>
@@ -38,12 +38,10 @@
             <div class="form-group">
                 <textarea id="message" name="message" placeholder="Your Message" required></textarea>
             </div>
-            <div class="expand-bar"></div>
+            <button type="submit" class = "btn-send">Send</button>
         </form>
-
     </div>
 </section>
 <script src="script.js"></script>
 </body>
-
 </html>
