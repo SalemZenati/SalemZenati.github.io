@@ -32,7 +32,13 @@ html, body {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
+
+header.hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
 
 .header::before {
     content: '';
@@ -148,6 +154,24 @@ html, body {
     justify-content: space-between;
     width: 345px;
     height: 50px;
+}
+
+@media (max-width: 600px) {
+    .home-content h1 {
+        font-size: 40px;
+    }
+
+    .home-content h3 {
+        font-size: 24px;
+    }
+
+    .home-content p {
+        font-size: 14px;
+    }
+
+    .home-content .btn-box {
+        width: 100%;
+    }
 }
 
 .btn-box a {
@@ -401,6 +425,69 @@ html, body {
     transition: all 0.3s ease;
 }
 
+/* --------------------MEDIA QUERIES------------- */
+
+/* For smaller screens (up to 768px) */
+@media (max-width: 768px) {
+    .about {
+        padding: 0 5%;
+    }
+
+    .about-content {
+        padding: 30px;
+        text-align: center;
+        max-width: 90%;
+    }
+
+    .about h1 {
+        font-size: 40px;
+    }
+
+    .about h3 {
+        font-size: 24px;
+    }
+
+    .about p {
+        font-size: 18px;
+    }
+
+    .expand-bar {
+        width: 60px;
+        height: 2px;
+    }
+}
+
+/* For extra small screens (up to 480px) */
+@media (max-width: 480px) {
+    .about {
+        padding: 0 2%;
+    }
+
+    .about-content {
+        padding: 20px;
+        max-width: 80%;
+        margin-top: 100px;
+    }
+
+    .about h1 {
+        font-size: 32px;
+    }
+
+    .about h3 {
+        font-size: 20px;
+    }
+
+    .about p {
+        font-size: 16px;
+    }
+
+    .expand-bar {
+        width: 50px;
+        height: 2px;
+    }
+}
+
+
 /* --------------------CONTACT HTML------------- */
 
 .contact {
@@ -486,6 +573,18 @@ html, body {
     background: #3f51b5;
 }
 
+@media(max-width: 600px) {
+    .contact h1 {
+        font-size: 40px;
+        padding-right: 0;
+    }
+
+    .contact p {
+        font-size: 24px;
+        padding-right: 0;
+    }
+}
+
 
 /* --------------------PORTFOLIO HTML------------- */
 .portfolio {
@@ -554,29 +653,15 @@ html, body {
 }
 
 /* Media Queries for Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .portfolio h1 {
-        font-size: 2rem; /* Even smaller font size for very small screens */
-        padding-top: 50px;
+        font-size: 2rem; /* Smaller font size for mobile phones */
+        padding-top: 50px; /* Reduce padding for mobile phones */
     }
 
     .portfolio p {
         font-size: 0.9rem;
-        padding: 0 5%; /* Add horizontal padding */
+        padding: 0 10%; /* Add horizontal padding */
     }
 }
 
-@media (max-width: 480px) {
-    .portfolio {
-        padding: 5% 3%; /* Further reduce padding for mobile phones */
-    }
-
-    .portfolio h1 {
-        font-size: 1.5rem; /* Smaller font size for mobile phones */
-        padding-top: 30px;
-    }
-
-    .portfolio p {
-        font-size: 0.8rem; /* Smaller text for mobile phones */
-    }
-}

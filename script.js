@@ -29,4 +29,23 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.log('Expand bar or about content not found.');
     }
+
+
+    let lastScrollTop = 0;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+
+  if (scrollTop > lastScrollTop) {
+    // Scrolling down
+    header.classList.add('hidden');
+  } else {
+    // Scrolling up
+    header.classList.remove('hidden');
+  }
+
+  lastScrollTop = scrollTop;
+});
+
 });
